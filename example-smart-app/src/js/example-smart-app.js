@@ -21,12 +21,11 @@
                       }
                     }
                   });
-
-        var dreport = smart.patient.api.fetchAll({
+				  
+	  var dreport = smart.patient.api.fetchAll({
 		type: 'DiagnosticReport'		
 	  });
 console.log(dreport);
-        
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
@@ -59,6 +58,7 @@ console.log(dreport);
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
+		  p.dr=dreport;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -160,6 +160,8 @@ console.log(dreport);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+	
+	 $('#dr').html(p.dr);
   };
 
 })(window);
