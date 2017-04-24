@@ -26,7 +26,7 @@
 	 
 
 	 
-	  api.fetchAll({type: "MedicationOrder", query: {patient: patient.id, status: "active"}})
+	  smart.patient.api.fetchAll({type: "MedicationOrder", query: {patient: patient.id, status: "active"}})
             	   .then(function(meds) {
             	       
             	       	    console.log( "meds="+meds.length );
@@ -35,7 +35,7 @@
             	 
 
 
- api.fetchAll({type: "DiagnosticReport", query: {patient: patient.id, status: "active"}})
+ smart.patient.api.fetchAll({type: "DiagnosticReport", query: {patient: patient.id, status: "active"}})
             	   .then(function(drs) {
             	       
             	       	    console.log( "drs="+drs.length );
