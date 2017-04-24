@@ -22,10 +22,28 @@
                     }
                   });
 				  
-	  var dreport = smart.patient.api.fetchAll({
-		type: 'DiagnosticReport'		
-	  });
-console.log(dreport);
+	 
+	 
+
+	 
+	  api.fetchAll({type: "MedicationOrder", query: {patient: patient.id, status: "active"}})
+            	   .then(function(meds) {
+            	       
+            	       	    console.log( "meds="+meds.length );
+            	        });
+            	       
+            	    });
+
+
+ api.fetchAll({type: "DiagnosticReport", query: {patient: patient.id, status: "active"}})
+            	   .then(function(drs) {
+            	       
+            	       	    console.log( "drs="+drs.length );
+            	        });
+            	       
+            	    });					
+					
+	 
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
