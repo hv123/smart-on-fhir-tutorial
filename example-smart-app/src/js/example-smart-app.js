@@ -32,7 +32,7 @@
             	       	    console.log( "meds="+meds.length );
             	        });
             	       
-            	    });
+            	 
 
 
  api.fetchAll({type: "DiagnosticReport", query: {patient: patient.id, status: "active"}})
@@ -40,10 +40,8 @@
             	       
             	       	    console.log( "drs="+drs.length );
             	        });
-            	       
-            	    });					
-					
-	 
+  	 
+			
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
