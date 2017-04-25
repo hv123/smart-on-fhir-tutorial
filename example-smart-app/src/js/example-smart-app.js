@@ -32,10 +32,10 @@
 							console.log(drs);
 	 
 	 drs.forEach(function(o){
-				console.log(o.id);
+				console.log("id="+o.id);
 				api.fetchAll({type: "DiagnosticReport", query: {identifier: o.id}})
             	   .then(function(dr) {
-            	     console.log("---------------'+dr.result);   
+            	     console.log("---------------"+dr);   
             	    });
    
   });
