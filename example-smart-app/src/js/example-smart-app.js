@@ -39,10 +39,11 @@
 					console.log("performer reference="+o.performer.reference);
 					console.log("text="+o.text);
 					
-					
-				smart.patient.api.fetchAll({type: "DiagnosticReport", query: {identifier: o.id}})
-            	   .then(function(dr) {
-            	     console.log("---------------length from single call"+dr.length);   
+									
+					smart.patient.api.fetchAll({type: "Practitioner", query: '1912007'})
+            	   .then(function(pr) {
+            	     console.log("pr length="+pr.length);   
+					 console.log("pr="+pr);   
             	    });
    
   });
