@@ -32,9 +32,15 @@
 							console.log(drs);
 	 
 	 drs.forEach(function(o){
-   var byCodes1 = smart.byCodes(o, 'code');
-   console.log(byCodes1);
+				console.log(o.id);
+				api.fetchAll({type: "DiagnosticReport", query: {identifier: o.id}})
+            	   .then(function(dr) {
+            	     console.log("---------------'+dr.result);   
+            	    });
+   
   });
+  
+  
 	 
             	        });
 	      
