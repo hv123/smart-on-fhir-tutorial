@@ -23,19 +23,19 @@
                   });
 				  
 	 
-	      	  smart.patient.api.fetchAll({type: "MedicationOrder", query: {patient: patient.id}})
-            	   .then(function(meds) {
-            	       
-            	       	    console.log( "meds="+meds.length );
-            	        });
-            	       
-            	 
 
 
  smart.patient.api.fetchAll({type: "DiagnosticReport"})
             	   .then(function(drs) {
             	       
             	       	    console.log( "drs="+drs.length );
+							console.log(drs);
+	 
+	 drs.forEach(function(o){
+   var byCodes1 = smart.byCodes(o, 'code');
+   console.log(byCodes1);
+  });
+	 
             	        });
 	      
 			
