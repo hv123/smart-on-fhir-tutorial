@@ -40,7 +40,7 @@
 					console.log("text="+o.text);
 					
 									
-					smart.patient.api.fetchAll({type: "Practitioner", query: '1912007'})
+					smart.patient.api.read({type: "Practitioner", id: "1912007"})
             	   .then(function(pr) {
             	     console.log("pr length="+pr.length);   
 					 console.log("pr="+pr);   
