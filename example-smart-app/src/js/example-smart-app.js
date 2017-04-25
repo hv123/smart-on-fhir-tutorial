@@ -32,12 +32,17 @@
 							console.log(drs);
 	 
 	 drs.forEach(function(o){
-				console.log("id="+o.id);
+					console.log("id="+o.id);
 					console.log("datetime="+o.effectiveDateTime);
+					console.log("datetime issued="+o.issued);
+					console.log("performer="+o.performer);
+					console.log("performer reference="+o.performer.reference);
 					console.log("text="+o.text);
+					
+					
 				smart.patient.api.fetchAll({type: "DiagnosticReport", query: {identifier: o.id}})
             	   .then(function(dr) {
-            	     console.log("---------------"+dr);   
+            	     console.log("---------------length from single call"+dr.length);   
             	    });
    
   });
