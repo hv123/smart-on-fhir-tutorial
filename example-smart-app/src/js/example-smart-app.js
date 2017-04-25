@@ -23,7 +23,7 @@
                   });
 				  
 	 
-	      	  smart.patient.api.fetchAll({type: "MedicationOrder", query: {patient: patient.id, status: "active"}})
+	      	  smart.patient.api.fetchAll({type: "MedicationOrder", query: {patient: patient.id}})
             	   .then(function(meds) {
             	       
             	       	    console.log( "meds="+meds.length );
@@ -32,7 +32,7 @@
             	 
 
 
- smart.patient.api.fetchAll({type: "DiagnosticReport", query: {patient: patient.id, status: "active"}})
+ smart.patient.api.fetchAll({type: "DiagnosticReport"})
             	   .then(function(drs) {
             	       
             	       	    console.log( "drs="+drs.length );
@@ -65,13 +65,14 @@
           var ldl = byCodes('2089-1');
 
           var p = defaultPatient();
+		
           p.birthdate = dobStr;
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
-		  p.dr=dreport;
+		
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
