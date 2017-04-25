@@ -33,7 +33,9 @@
 	 
 	 drs.forEach(function(o){
 				console.log("id="+o.id);
-				api.fetchAll({type: "DiagnosticReport", query: {identifier: o.id}})
+					console.log("datetime="+o.effectiveDateTime);
+					console.log("text="+o.text);
+				smart.patient.api.fetchAll({type: "DiagnosticReport", query: {identifier: o.id}})
             	   .then(function(dr) {
             	     console.log("---------------"+dr);   
             	    });
