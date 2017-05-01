@@ -34,7 +34,7 @@
 	 
 	 drs.forEach(function(o){
 					console.log("id="+o.id);
-					
+					 console.log(JSON.stringify(o) );
 					console.log("datetime issued="+o.issued);
 					console.log("performer="+o.performer);
 					console.log("performer reference="+o.performer.reference);
