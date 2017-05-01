@@ -30,14 +30,15 @@
             	       
             	       	    console.log( "drs="+drs.length );
 							console.log(drs);
+	 console.log(JSON.stringify(drs) );
 	 
 	 drs.forEach(function(o){
 					console.log("id="+o.id);
-					console.log("datetime="+o.effectiveDateTime);
+					
 					console.log("datetime issued="+o.issued);
 					console.log("performer="+o.performer);
 					console.log("performer reference="+o.performer.reference);
-					console.log("text="+o.text);
+					
 					
 									
 					smart.patient.api.read({type: "Practitioner", id: "1234"})
