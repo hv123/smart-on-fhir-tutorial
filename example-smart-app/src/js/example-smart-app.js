@@ -33,6 +33,13 @@
 	 console.log(JSON.stringify(drs) );
 	 
 	 drs.forEach(function(o){
+		 
+		 var thelink = $('<a>',{
+    text: o.id,
+    title: o.id,
+    href: 'http://www.yahoo.com'
+}).appendTo('body');
+		 
 					console.log("id="+o.id);
 					 console.log(JSON.stringify(o) );
 					console.log("datetime issued="+o.issued);
